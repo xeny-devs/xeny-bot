@@ -1,4 +1,4 @@
-import { Client, Command, CommandMessage, CommandNotFound, Discord, On, Once } from "@typeit/discord";
+import { Client, Command, CommandMessage, CommandNotFound, Discord } from "@typeit/discord";
 
 class Main {
 
