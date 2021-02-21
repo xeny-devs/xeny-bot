@@ -1,8 +1,21 @@
 {
     "compilerOptions": {
         "allowJs": true,
-        "target": "es5",
+        "target": "es2017",
         "module": "commonjs",
         "sourceMap": true,
-    }
+        "outDir": "build",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": [
+            "ES2017",
+            "ESNext.AsyncIterable"
+        ],
+        "moduleResolution": "node"
+    },
+    "exclude": [
+        "node_modules"
+    ]
 }

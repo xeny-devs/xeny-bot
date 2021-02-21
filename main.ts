@@ -1,32 +1,43 @@
-import { Client, Discord } from "@typeit/discord";
+import { Client, Command, CommandMessage, CommandNotFound, Discord, On, Once } from "@typeit/discord";
 
 class Main {
 
-    private client:XenyClient;
+    private client:Client;
 
-    constructor(client:XenyClient) {
+    constructor(client:Client) {
         this.client = client;
     }
 
-    public getClient():XenyClient {
+    public getClient():Client {
         return this.client
     }
     
 }
 
-class XenyClient {
+async function start(token:string) {
+    const client = new Client({
+        classes: [
+            `${__dirname}/*Discord.ts`,
+            `${__dirname}/*Discord.js`
+        ],
+        silent: false,
+        variablesChar: ":"
+    });
 
-    private token:string;
-    private client:Client;
+    await client.login(token);
+}
 
-    constructor(token:string) {
-        this.token = token;
-        this.client.login(token);
+start("YOUR_TOKEN (COMING SOON)");
+
+@Discord("+")
+abstract class AppDiscord {
+    @Command("test")
+    private test(message:CommandMessage) {
+        message.channel.send("It worked!");
     }
 
-    
-    public getClient():Client {
-        return this.client;
+    @CommandNotFound()
+    private notFound(message:CommandMessage) {
+        message.channel.send("Unexpected command!");
     }
-    
 }
