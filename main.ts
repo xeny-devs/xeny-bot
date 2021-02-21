@@ -1,5 +1,4 @@
 import { Client, Discord } from "@typeit/discord";
-import { start } from "repl";
 
 class Main {
 
@@ -9,7 +8,7 @@ class Main {
         this.client = client;
     }
 
-    public get getClient():XenyClient {
+    public getClient():XenyClient {
         return this.client
     }
     
@@ -26,9 +25,8 @@ class XenyClient {
     }
 
     
-    public get getClient():Client {
+    public getClient():Client {
         return this.client;
     }
     
-
 }

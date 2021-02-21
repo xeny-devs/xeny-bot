@@ -108,5 +108,5 @@ dist
 
 # JavaScript compiled data
 # Use TypeScript compiler tsc [Must have TypeScript installed locally!] (tsc [typescript file])
-.js
-.js.map
+main.js.map
+main.js
